@@ -8,23 +8,40 @@
 #include "layers/civilisation/CivilisationLayer.h"
 #include "layers/divine/DivineLayer.h"
 
+// Renderer
+#include "renderer/PlanetRenderer.h"
+
 #include <filesystem>
 #include <string>
+#include <cstring>
 
 int main(int argc, char* argv[]) {
     godsim::Log::init();
 
     LOG_INFO("========================================");
-    LOG_INFO("       GOD SIMULATION v0.2");
-    LOG_INFO("   Phase 1A: The Living Planet");
+    LOG_INFO("       GOD SIMULATION v0.3");
+    LOG_INFO("   Phase 1B: Planet Renderer");
     LOG_INFO("========================================");
 
-    // Parse optional seed from command line
+    // Parse arguments
     godsim::u64 seed = 12345;
-    if (argc > 1) {
-        seed = std::stoull(argv[1]);
-        LOG_INFO("Using seed from command line: {}", seed);
+    std::string output_dir = "maps";
+    bool headless = false;
+
+    for (int i = 1; i < argc; i++) {
+        if (std::strcmp(argv[i], "--headless") == 0) {
+            headless = true;
+        } else if (std::strcmp(argv[i], "--output") == 0 && i + 1 < argc) {
+            output_dir = argv[++i];
+        } else {
+            // Assume it's a seed
+            try { seed = std::stoull(argv[i]); }
+            catch (...) { LOG_WARN("Unknown argument: {}", argv[i]); }
+        }
     }
+
+    LOG_INFO("Seed: {}", seed);
+    if (headless) LOG_INFO("Mode: headless (no renderer)");
 
     // Create simulation
     godsim::Simulation sim(seed);
@@ -41,29 +58,23 @@ int main(int argc, char* argv[]) {
     planetary->generate_planet("Terra", 512);
 
     // ─── Export maps ───
-    // Output directory: next to the executable, or a user-specified path
-    std::string output_dir = ".";
-    if (argc > 2) {
-        output_dir = argv[2];
+    std::filesystem::create_directories(output_dir);
+    planetary->export_maps(output_dir);
+    LOG_INFO("Maps exported to: {}", std::filesystem::absolute(output_dir).string());
+
+    // ─── Render ───
+    if (!headless) {
+        try {
+            godsim::PlanetRenderer renderer;
+            renderer.init(planetary->planet());
+            renderer.run();
+        } catch (const std::exception& e) {
+            LOG_ERROR("Renderer failed: {}", e.what());
+            LOG_INFO("Run with --headless to skip rendering");
+        }
     }
 
-    // Create output directory if it doesn't exist
-    std::filesystem::create_directories(output_dir);
-
-    planetary->export_maps(output_dir);
-
-    LOG_INFO("");
-    LOG_INFO("--- Maps exported to: {} ---", std::filesystem::absolute(output_dir).string());
-    LOG_INFO("  elevation.ppm    - Raw heightmap (grayscale)");
-    LOG_INFO("  terrain.ppm      - Coloured terrain (ocean/land/mountains)");
-    LOG_INFO("  biomes.ppm       - Biome classification");
-    LOG_INFO("  temperature.ppm  - Temperature heatmap");
-    LOG_INFO("  moisture.ppm     - Moisture distribution");
-    LOG_INFO("");
-    LOG_INFO("Open these .ppm files with any image viewer (GIMP, IrfanView,");
-    LOG_INFO("Paint.NET, or VS Code with an image extension).");
-
-    // ─── Run a few ticks to prove simulation still works ───
+    // ─── Run a few ticks to prove simulation works ───
     LOG_INFO("");
     LOG_INFO("--- Running 10 history ticks ---");
     sim.set_tick_level(1);
@@ -74,7 +85,7 @@ int main(int argc, char* argv[]) {
     auto snap_path = (std::filesystem::temp_directory_path() / "godsim_phase1.snap").string();
     sim.save_snapshot(snap_path);
     sim.load_snapshot(snap_path);
-    LOG_INFO("Snapshot round-trip OK (planet data preserved)");
+    LOG_INFO("Snapshot round-trip OK");
 
     sim.shutdown();
 

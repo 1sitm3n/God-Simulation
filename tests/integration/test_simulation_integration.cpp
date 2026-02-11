@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <filesystem>
 #include "core/util/Log.h"
 #include "simulation/Simulation.h"
 #include "layers/cosmological/CosmologicalLayer.h"
@@ -6,7 +7,6 @@
 #include "layers/biological/BiologicalLayer.h"
 #include "layers/civilisation/CivilisationLayer.h"
 #include "layers/divine/DivineLayer.h"
-#include <filesystem>
 
 using namespace godsim;
 

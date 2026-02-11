@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(GodSimulation VERSION 0.1.0 LANGUAGES CXX)
+project(GodSimulation VERSION 0.3.0 LANGUAGES CXX C)
 
 # ─── C++ Standard ───
 set(CMAKE_CXX_STANDARD 20)
@@ -62,7 +62,36 @@ FetchContent_Declare(
     GIT_SHALLOW    TRUE
 )
 
-FetchContent_MakeAvailable(entt spdlog Catch2 pcg_cpp)
+# GLFW - Windowing (renderer)
+set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
+FetchContent_Declare(
+    glfw
+    GIT_REPOSITORY https://github.com/glfw/glfw.git
+    GIT_TAG        3.4
+    GIT_SHALLOW    TRUE
+)
+
+# glm - Math library (header-only)
+set(GLM_ENABLE_CXX_20 ON CACHE BOOL "" FORCE)
+FetchContent_Declare(
+    glm
+    GIT_REPOSITORY https://github.com/g-truc/glm.git
+    GIT_TAG        0.9.9.8
+    GIT_SHALLOW    TRUE
+)
+
+FetchContent_MakeAvailable(entt spdlog Catch2 pcg_cpp glfw)
+
+# glm - just use as include directory (avoids CMake target compatibility issues)
+FetchContent_GetProperties(glm)
+if(NOT glm_POPULATED)
+    FetchContent_Populate(glm)
+endif()
+add_library(glm_headers INTERFACE)
+target_include_directories(glm_headers INTERFACE ${glm_SOURCE_DIR})
 
 # LZ4 needs special handling - it's not a CMake project at the top level
 FetchContent_GetProperties(lz4)
@@ -76,7 +105,10 @@ target_include_directories(lz4_lib PUBLIC ${lz4_SOURCE_DIR}/lib)
 add_library(pcg INTERFACE)
 target_include_directories(pcg INTERFACE ${pcg_cpp_SOURCE_DIR}/include)
 
-# ─── God Simulation Library ───
+# OpenGL
+find_package(OpenGL REQUIRED)
+
+# ─── God Simulation Library (core + layers, no renderer) ───
 file(GLOB_RECURSE GODSIM_SOURCES
     src/core/*.cpp
     src/layers/*.cpp
@@ -97,11 +129,17 @@ target_link_libraries(godsim_lib PUBLIC
     lz4_lib
 )
 
-# ─── Main Executable ───
+# ─── Main Executable (with renderer) ───
 add_executable(godsim src/main.cpp)
-target_link_libraries(godsim PRIVATE godsim_lib)
+target_include_directories(godsim PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+target_link_libraries(godsim PRIVATE
+    godsim_lib
+    glfw
+    glm_headers
+    OpenGL::GL
+)
 
-# ─── Tests ───
+# ─── Tests (no renderer dependency) ───
 enable_testing()
 file(GLOB_RECURSE TEST_SOURCES tests/*.cpp)
 add_executable(godsim_tests ${TEST_SOURCES})

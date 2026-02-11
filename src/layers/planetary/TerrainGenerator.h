@@ -58,26 +58,20 @@ public:
         LOG_INFO("  Stage 5: Normalisation and sea level adjustment...");
         elevation.normalise();
 
-        // Sort values to find the elevation threshold that gives correct ocean coverage
-        std::vector<f32> sorted(elevation.data_ptr(), elevation.data_ptr() + elevation.size());
+        std::vector<f32> sorted(elevation.data_ptr(),
+                                 elevation.data_ptr() + elevation.size());
         std::sort(sorted.begin(), sorted.end());
-
-        // The sea_level'th percentile becomes our water threshold
         size_t sea_idx = static_cast<size_t>(config.sea_level * sorted.size());
         f32 threshold = sorted[std::min(sea_idx, sorted.size() - 1)];
 
-        // Remap so that 'threshold' maps to config.sea_level
-        // Below threshold: compress to [0, sea_level]
-        // Above threshold: compress to [sea_level, 1]
         for (u32 y = 0; y < config.height; y++) {
             for (u32 x = 0; x < config.width; x++) {
                 f32 e = elevation.get(x, y);
                 if (e <= threshold) {
                     elevation.set(x, y, (e / threshold) * config.sea_level);
                 } else {
-                    elevation.set(x, y,
-                                  config.sea_level + ((e - threshold) / (1.0f - threshold)) *
-                                                         (1.0f - config.sea_level));
+                    elevation.set(x, y, config.sea_level +
+                        ((e - threshold) / (1.0f - threshold)) * (1.0f - config.sea_level));
                 }
             }
         }
@@ -316,3 +310,4 @@ private:
 };
 
 } // namespace godsim
+
