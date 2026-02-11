@@ -1,7 +1,6 @@
 #include <catch2/catch_test_macros.hpp>
 #include "core/serialise/BinaryStream.h"
 #include <cmath>
-#include <filesystem>
 
 using namespace godsim;
 
@@ -50,8 +49,8 @@ TEST_CASE("BinaryStream file round-trip", "[serialise]") {
     writer.write_string("test");
     writer.write_f64(3.14);
 
-std::string path = (std::filesystem::temp_directory_path() / "godsim_test_binary.bin").string();
-   writer.save_to_file(path);
+    std::string path = "/tmp/godsim_test_binary.bin";
+    writer.save_to_file(path);
 
     auto reader = BinaryReader::from_file(path);
     REQUIRE(reader.read_u32() == 42);
