@@ -68,6 +68,7 @@ typedef ptrdiff_t       GLintptr;
 // Depth functions
 #define GL_LESS                     0x0201
 #define GL_LEQUAL                   0x0203
+#define GL_ALWAYS                   0x0207
 
 // Blend functions
 #define GL_SRC_ALPHA                0x0302
