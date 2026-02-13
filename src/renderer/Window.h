@@ -101,7 +101,10 @@ public:
         input_.key_s      = glfwGetKey(window_, GLFW_KEY_S)      == GLFW_PRESS;
         input_.key_d      = glfwGetKey(window_, GLFW_KEY_D)      == GLFW_PRESS;
         input_.key_space  = glfwGetKey(window_, GLFW_KEY_SPACE)  == GLFW_PRESS;
-        input_.key_shift  = glfwGetKey(window_, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS;
+        input_.key_shift  = glfwGetKey(window_, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS
+                         || glfwGetKey(window_, GLFW_KEY_RIGHT_SHIFT) == GLFW_PRESS;
+        input_.key_ctrl   = glfwGetKey(window_, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS
+                         || glfwGetKey(window_, GLFW_KEY_RIGHT_CONTROL) == GLFW_PRESS;
         input_.key_1      = glfwGetKey(window_, GLFW_KEY_1)      == GLFW_PRESS;
         input_.key_2      = glfwGetKey(window_, GLFW_KEY_2)      == GLFW_PRESS;
         input_.key_3      = glfwGetKey(window_, GLFW_KEY_3)      == GLFW_PRESS;
@@ -109,6 +112,16 @@ public:
         input_.key_5      = glfwGetKey(window_, GLFW_KEY_5)      == GLFW_PRESS;
         input_.key_r      = glfwGetKey(window_, GLFW_KEY_R)      == GLFW_PRESS;
         input_.key_g      = glfwGetKey(window_, GLFW_KEY_G)      == GLFW_PRESS;
+        input_.key_t      = glfwGetKey(window_, GLFW_KEY_T)      == GLFW_PRESS;
+        input_.key_c      = glfwGetKey(window_, GLFW_KEY_C)      == GLFW_PRESS;
+        input_.key_h      = glfwGetKey(window_, GLFW_KEY_H)      == GLFW_PRESS;
+        input_.key_plus   = glfwGetKey(window_, GLFW_KEY_EQUAL)  == GLFW_PRESS
+                         || glfwGetKey(window_, GLFW_KEY_KP_ADD) == GLFW_PRESS;
+        input_.key_minus  = glfwGetKey(window_, GLFW_KEY_MINUS)  == GLFW_PRESS
+                         || glfwGetKey(window_, GLFW_KEY_KP_SUBTRACT) == GLFW_PRESS;
+        input_.key_p      = glfwGetKey(window_, GLFW_KEY_P)      == GLFW_PRESS;
+        input_.key_b      = glfwGetKey(window_, GLFW_KEY_B)      == GLFW_PRESS;
+        input_.key_tab    = glfwGetKey(window_, GLFW_KEY_TAB)    == GLFW_PRESS;
 
         return input_;
     }
@@ -119,6 +132,10 @@ public:
         // Reset per-frame accumulators
         input_.scroll_dy = 0;
         input_.resized = false;
+    }
+
+    void set_title(const std::string& title) {
+        glfwSetWindowTitle(window_, title.c_str());
     }
 
     GLFWwindow* handle() { return window_; }

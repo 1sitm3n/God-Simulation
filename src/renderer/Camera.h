@@ -21,8 +21,8 @@ public:
 
     /// Process input for one frame.
     void update(const InputState& input, float dt) {
-        // Orbit: left mouse drag
-        if (input.left_mouse_down) {
+        // Orbit: left mouse drag (only when not doing terraforming)
+        if (input.left_mouse_down && !input.right_mouse_down) {
             float sensitivity = 0.005f;
             yaw_   -= static_cast<float>(input.mouse_dx) * sensitivity;
             pitch_ += static_cast<float>(input.mouse_dy) * sensitivity;
@@ -31,8 +31,8 @@ public:
             pitch_ = std::clamp(pitch_, -1.5f, 1.5f);
         }
 
-        // Zoom: scroll
-        if (input.scroll_dy != 0) {
+        // Zoom: scroll (when not terraforming)
+        if (input.scroll_dy != 0 && !input.right_mouse_down) {
             distance_ -= static_cast<float>(input.scroll_dy) * 0.3f;
             distance_ = std::clamp(distance_, min_distance_, max_distance_);
         }
@@ -41,10 +41,34 @@ public:
         if (input.key_r) {
             yaw_ = 0.0f;
             pitch_ = 0.3f;
-            distance_ = 4.0f;
+            distance_ = 3.2f;
         }
 
         update_matrices();
+    }
+
+    /// Cast a ray from screen coordinates into world space.
+    /// Returns ray origin and direction.
+    void screen_to_ray(double screen_x, double screen_y,
+                       int viewport_w, int viewport_h,
+                       glm::vec3& ray_origin, glm::vec3& ray_dir) const {
+        // Convert screen coords to NDC [-1, 1]
+        float ndc_x = (2.0f * static_cast<float>(screen_x)) / viewport_w - 1.0f;
+        float ndc_y = 1.0f - (2.0f * static_cast<float>(screen_y)) / viewport_h;
+
+        // Unproject near and far points
+        glm::mat4 inv_vp = glm::inverse(proj_ * view_);
+        glm::vec4 near_ndc(ndc_x, ndc_y, -1.0f, 1.0f);
+        glm::vec4 far_ndc(ndc_x, ndc_y, 1.0f, 1.0f);
+
+        glm::vec4 near_world = inv_vp * near_ndc;
+        glm::vec4 far_world  = inv_vp * far_ndc;
+
+        near_world /= near_world.w;
+        far_world  /= far_world.w;
+
+        ray_origin = glm::vec3(near_world);
+        ray_dir = glm::normalize(glm::vec3(far_world) - glm::vec3(near_world));
     }
 
     const glm::mat4& view()       const { return view_; }
@@ -52,7 +76,10 @@ public:
     const glm::vec3& position()   const { return position_; }
 
     float distance()   const { return distance_; }
-    void set_distance(float d) { distance_ = std::clamp(d, min_distance_, max_distance_); }
+    void set_distance(float d) { distance_ = std::clamp(d, min_distance_, max_distance_); update_matrices(); }
+
+    float yaw() const { return yaw_; }
+    float pitch() const { return pitch_; }
 
 private:
     void update_matrices() {
@@ -68,8 +95,8 @@ private:
     // Orbit parameters
     float yaw_   = 0.0f;
     float pitch_ = 0.3f;
-    float distance_ = 4.0f;
-    float min_distance_ = 1.5f;
+    float distance_ = 3.2f;
+    float min_distance_ = 1.3f;
     float max_distance_ = 20.0f;
 
     // Projection
@@ -81,7 +108,7 @@ private:
     // Computed
     glm::mat4 view_{1.0f};
     glm::mat4 proj_{1.0f};
-    glm::vec3 position_{0.0f, 0.0f, 4.0f};
+    glm::vec3 position_{0.0f, 0.0f, 3.2f};
 };
 
 } // namespace godsim

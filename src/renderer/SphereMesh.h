@@ -15,6 +15,25 @@
 
 namespace godsim {
 
+/// Map visualisation modes
+enum class MapMode : int {
+    Biome = 0,      // Default biome colours
+    Elevation,      // Blue-white heatmap
+    Temperature,    // Blue-red heatmap
+    Moisture,       // Brown-green heatmap
+    COUNT
+};
+
+inline const char* map_mode_name(MapMode m) {
+    switch (m) {
+        case MapMode::Biome:       return "Biome";
+        case MapMode::Elevation:   return "Elevation";
+        case MapMode::Temperature: return "Temperature";
+        case MapMode::Moisture:    return "Moisture";
+        default:                   return "Unknown";
+    }
+}
+
 /// Vertex: position (3f) + normal (3f) + UV (2f) = 8 floats
 struct Vertex {
     float px, py, pz;
@@ -114,6 +133,40 @@ public:
         gl::BindVertexArray(0);
     }
 
+    /// Rebuild all textures after terrain modification.
+    void rebuild_textures(const PlanetData& planet) {
+        rebuild_biome_texture(planet);
+        rebuild_elevation_texture(planet);
+        rebuild_normal_texture(planet);
+    }
+
+    /// Swap the biome texture to show a different data visualisation.
+    void set_map_mode(const PlanetData& planet, MapMode mode) {
+        u32 w = planet.width, h = planet.height;
+        std::vector<u8> pixels(w * h * 3);
+
+        switch (mode) {
+        case MapMode::Biome:
+            generate_biome_pixels(planet, pixels);
+            break;
+        case MapMode::Elevation:
+            generate_elevation_heatmap(planet, pixels);
+            break;
+        case MapMode::Temperature:
+            generate_temperature_heatmap(planet, pixels);
+            break;
+        case MapMode::Moisture:
+            generate_moisture_heatmap(planet, pixels);
+            break;
+        default:
+            generate_biome_pixels(planet, pixels);
+            break;
+        }
+
+        gl::BindTexture(GL_TEXTURE_2D, biome_tex_);
+        gl::TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
+    }
+
     ~SphereMesh() {
         if (vao_) gl::DeleteVertexArrays(1, &vao_);
         if (vbo_) gl::DeleteBuffers(1, &vbo_);
@@ -127,10 +180,10 @@ public:
     SphereMesh& operator=(const SphereMesh&) = delete;
 
 private:
-    void create_biome_texture(const PlanetData& planet) {
-        u32 w = planet.width, h = planet.height;
-        std::vector<u8> pixels(w * h * 3);
+    // ─── Pixel generators for map modes ───
 
+    void generate_biome_pixels(const PlanetData& planet, std::vector<u8>& pixels) {
+        u32 w = planet.width, h = planet.height;
         for (u32 y = 0; y < h; y++) {
             for (u32 x = 0; x < w; x++) {
                 BiomeType biome = planet.biome_at(x, y);
@@ -143,6 +196,106 @@ private:
                 pixels[idx + 2] = static_cast<u8>(std::min(255.0f, info.b * shade));
             }
         }
+    }
+
+    void generate_elevation_heatmap(const PlanetData& planet, std::vector<u8>& pixels) {
+        u32 w = planet.width, h = planet.height;
+        for (u32 y = 0; y < h; y++) {
+            for (u32 x = 0; x < w; x++) {
+                float e = planet.elevation.get(x, y);
+                size_t idx = (y * w + x) * 3;
+
+                if (e < planet.sea_level) {
+                    // Ocean: dark blue → blue
+                    float t = e / planet.sea_level;
+                    pixels[idx + 0] = static_cast<u8>(10 + 30 * t);
+                    pixels[idx + 1] = static_cast<u8>(20 + 60 * t);
+                    pixels[idx + 2] = static_cast<u8>(80 + 100 * t);
+                } else {
+                    // Land: green → yellow → white
+                    float t = (e - planet.sea_level) / (1.0f - planet.sea_level);
+                    if (t < 0.5f) {
+                        float s = t * 2.0f;
+                        pixels[idx + 0] = static_cast<u8>(40 + 180 * s);
+                        pixels[idx + 1] = static_cast<u8>(140 + 80 * s);
+                        pixels[idx + 2] = static_cast<u8>(40);
+                    } else {
+                        float s = (t - 0.5f) * 2.0f;
+                        pixels[idx + 0] = static_cast<u8>(220 + 35 * s);
+                        pixels[idx + 1] = static_cast<u8>(220 + 35 * s);
+                        pixels[idx + 2] = static_cast<u8>(40 + 215 * s);
+                    }
+                }
+            }
+        }
+    }
+
+    void generate_temperature_heatmap(const PlanetData& planet, std::vector<u8>& pixels) {
+        u32 w = planet.width, h = planet.height;
+        float tmin = planet.temperature.min_value();
+        float tmax = planet.temperature.max_value();
+        float range = std::max(tmax - tmin, 1.0f);
+
+        for (u32 y = 0; y < h; y++) {
+            for (u32 x = 0; x < w; x++) {
+                float t = (planet.temperature.get(x, y) - tmin) / range; // 0..1
+                size_t idx = (y * w + x) * 3;
+
+                // Blue → cyan → green → yellow → red
+                if (t < 0.25f) {
+                    float s = t * 4.0f;
+                    pixels[idx + 0] = 0;
+                    pixels[idx + 1] = static_cast<u8>(50 * s);
+                    pixels[idx + 2] = static_cast<u8>(180 + 50 * s);
+                } else if (t < 0.5f) {
+                    float s = (t - 0.25f) * 4.0f;
+                    pixels[idx + 0] = static_cast<u8>(30 * s);
+                    pixels[idx + 1] = static_cast<u8>(50 + 170 * s);
+                    pixels[idx + 2] = static_cast<u8>(230 - 180 * s);
+                } else if (t < 0.75f) {
+                    float s = (t - 0.5f) * 4.0f;
+                    pixels[idx + 0] = static_cast<u8>(30 + 210 * s);
+                    pixels[idx + 1] = static_cast<u8>(220 - 20 * s);
+                    pixels[idx + 2] = static_cast<u8>(50 - 30 * s);
+                } else {
+                    float s = (t - 0.75f) * 4.0f;
+                    pixels[idx + 0] = static_cast<u8>(240);
+                    pixels[idx + 1] = static_cast<u8>(200 - 170 * s);
+                    pixels[idx + 2] = static_cast<u8>(20);
+                }
+            }
+        }
+    }
+
+    void generate_moisture_heatmap(const PlanetData& planet, std::vector<u8>& pixels) {
+        u32 w = planet.width, h = planet.height;
+        for (u32 y = 0; y < h; y++) {
+            for (u32 x = 0; x < w; x++) {
+                float m = std::clamp(planet.moisture.get(x, y), 0.0f, 1.0f);
+                size_t idx = (y * w + x) * 3;
+
+                // Brown (dry) → green → teal (wet)
+                if (m < 0.5f) {
+                    float s = m * 2.0f;
+                    pixels[idx + 0] = static_cast<u8>(180 - 140 * s);
+                    pixels[idx + 1] = static_cast<u8>(140 - 40 * s + 80 * s);
+                    pixels[idx + 2] = static_cast<u8>(60 - 20 * s);
+                } else {
+                    float s = (m - 0.5f) * 2.0f;
+                    pixels[idx + 0] = static_cast<u8>(40 - 20 * s);
+                    pixels[idx + 1] = static_cast<u8>(180 - 20 * s);
+                    pixels[idx + 2] = static_cast<u8>(40 + 140 * s);
+                }
+            }
+        }
+    }
+
+    // ─── Texture creation ───
+
+    void create_biome_texture(const PlanetData& planet) {
+        u32 w = planet.width, h = planet.height;
+        std::vector<u8> pixels(w * h * 3);
+        generate_biome_pixels(planet, pixels);
 
         gl::GenTextures(1, &biome_tex_);
         gl::BindTexture(GL_TEXTURE_2D, biome_tex_);
@@ -156,13 +309,8 @@ private:
     void create_elevation_texture(const PlanetData& planet) {
         u32 w = planet.width, h = planet.height;
         std::vector<u8> rgb(w * h * 3);
-        for (u32 y = 0; y < h; y++) {
-            for (u32 x = 0; x < w; x++) {
-                u8 v = static_cast<u8>(std::clamp(planet.elevation.get(x, y), 0.0f, 1.0f) * 255.0f);
-                size_t idx = (y * w + x) * 3;
-                rgb[idx] = rgb[idx + 1] = rgb[idx + 2] = v;
-            }
-        }
+        fill_elevation_rgb(planet, rgb);
+
         gl::GenTextures(1, &elevation_tex_);
         gl::BindTexture(GL_TEXTURE_2D, elevation_tex_);
         gl::TexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, rgb.data());
@@ -175,6 +323,58 @@ private:
     void create_normal_texture(const PlanetData& planet) {
         u32 w = planet.width, h = planet.height;
         std::vector<u8> pixels(w * h * 3);
+        fill_normal_rgb(planet, pixels);
+
+        gl::GenTextures(1, &normal_tex_);
+        gl::BindTexture(GL_TEXTURE_2D, normal_tex_);
+        gl::TexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
+        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    }
+
+    // ─── Texture rebuilds (reupload) ───
+
+    void rebuild_biome_texture(const PlanetData& planet) {
+        u32 w = planet.width, h = planet.height;
+        std::vector<u8> pixels(w * h * 3);
+        generate_biome_pixels(planet, pixels);
+        gl::BindTexture(GL_TEXTURE_2D, biome_tex_);
+        gl::TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
+    }
+
+    void rebuild_elevation_texture(const PlanetData& planet) {
+        u32 w = planet.width, h = planet.height;
+        std::vector<u8> rgb(w * h * 3);
+        fill_elevation_rgb(planet, rgb);
+        gl::BindTexture(GL_TEXTURE_2D, elevation_tex_);
+        gl::TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGB, GL_UNSIGNED_BYTE, rgb.data());
+    }
+
+    void rebuild_normal_texture(const PlanetData& planet) {
+        u32 w = planet.width, h = planet.height;
+        std::vector<u8> pixels(w * h * 3);
+        fill_normal_rgb(planet, pixels);
+        gl::BindTexture(GL_TEXTURE_2D, normal_tex_);
+        gl::TexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
+    }
+
+    // ─── Helpers ───
+
+    static void fill_elevation_rgb(const PlanetData& planet, std::vector<u8>& rgb) {
+        u32 w = planet.width, h = planet.height;
+        for (u32 y = 0; y < h; y++) {
+            for (u32 x = 0; x < w; x++) {
+                u8 v = static_cast<u8>(std::clamp(planet.elevation.get(x, y), 0.0f, 1.0f) * 255.0f);
+                size_t idx = (y * w + x) * 3;
+                rgb[idx] = rgb[idx + 1] = rgb[idx + 2] = v;
+            }
+        }
+    }
+
+    static void fill_normal_rgb(const PlanetData& planet, std::vector<u8>& pixels) {
+        u32 w = planet.width, h = planet.height;
         float strength = 4.0f;
 
         for (u32 y = 0; y < h; y++) {
@@ -194,14 +394,6 @@ private:
                 pixels[idx + 2] = static_cast<u8>((1.0f / len * 0.5f + 0.5f) * 255.0f);
             }
         }
-
-        gl::GenTextures(1, &normal_tex_);
-        gl::BindTexture(GL_TEXTURE_2D, normal_tex_);
-        gl::TexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, pixels.data());
-        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        gl::TexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     }
 
     GLuint vao_ = 0, vbo_ = 0, ebo_ = 0;

@@ -19,8 +19,8 @@ int main(int argc, char* argv[]) {
     godsim::Log::init();
 
     LOG_INFO("========================================");
-    LOG_INFO("       GOD SIMULATION v0.3");
-    LOG_INFO("   Phase 1B: Planet Renderer");
+    LOG_INFO("       GOD SIMULATION v0.4");
+    LOG_INFO("   Phase 1C: Interaction & Terraforming");
     LOG_INFO("========================================");
 
     // Parse arguments
@@ -68,6 +68,11 @@ int main(int argc, char* argv[]) {
             godsim::PlanetRenderer renderer;
             renderer.init(planetary->planet());
             renderer.run();
+
+            // Re-export maps if terrain was modified
+            std::filesystem::create_directories(output_dir);
+            planetary->export_maps(output_dir);
+            LOG_INFO("Maps re-exported to: {}", std::filesystem::absolute(output_dir).string());
         } catch (const std::exception& e) {
             LOG_ERROR("Renderer failed: {}", e.what());
             LOG_INFO("Run with --headless to skip rendering");

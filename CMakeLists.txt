@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(GodSimulation VERSION 0.3.0 LANGUAGES CXX C)
+project(GodSimulation VERSION 0.4.0 LANGUAGES CXX C)
 
 # ─── C++ Standard ───
 set(CMAKE_CXX_STANDARD 20)
@@ -67,6 +67,8 @@ set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "" FORCE)
+set(GLFW_BUILD_X11 ON CACHE BOOL "" FORCE)
 FetchContent_Declare(
     glfw
     GIT_REPOSITORY https://github.com/glfw/glfw.git

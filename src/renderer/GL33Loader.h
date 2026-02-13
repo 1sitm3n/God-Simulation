@@ -224,11 +224,16 @@ using EnableVertexAttribArrayFn = void(*)(GLuint);
 inline VertexAttribPointerFn     VertexAttribPointer     = nullptr;
 inline EnableVertexAttribArrayFn EnableVertexAttribArray  = nullptr;
 
+// --- Buffers (sub-data) ---
+using BufferSubDataFn = void(*)(GLenum, GLintptr, GLsizeiptr, const void*);
+inline BufferSubDataFn BufferSubData = nullptr;
+
 // --- Textures ---
 using GenTexturesFn      = void(*)(GLsizei, GLuint*);
 using BindTextureFn      = void(*)(GLenum, GLuint);
 using DeleteTexturesFn   = void(*)(GLsizei, const GLuint*);
 using TexImage2DFn       = void(*)(GLenum, GLint, GLint, GLsizei, GLsizei, GLint, GLenum, GLenum, const void*);
+using TexSubImage2DFn    = void(*)(GLenum, GLint, GLint, GLint, GLsizei, GLsizei, GLenum, GLenum, const void*);
 using TexParameteriFn    = void(*)(GLenum, GLenum, GLint);
 using ActiveTextureFn    = void(*)(GLenum);
 
@@ -236,6 +241,7 @@ inline GenTexturesFn    GenTextures    = nullptr;
 inline BindTextureFn    BindTexture    = nullptr;
 inline DeleteTexturesFn DeleteTextures = nullptr;
 inline TexImage2DFn     TexImage2D     = nullptr;
+inline TexSubImage2DFn  TexSubImage2D  = nullptr;
 inline TexParameteriFn  TexParameteri  = nullptr;
 inline ActiveTextureFn  ActiveTexture  = nullptr;
 
@@ -295,6 +301,7 @@ inline bool load() {
     GenBuffers    = (GenBuffersFn)    get("glGenBuffers");
     BindBuffer    = (BindBufferFn)    get("glBindBuffer");
     BufferData    = (BufferDataFn)    get("glBufferData");
+    BufferSubData = (BufferSubDataFn) get("glBufferSubData");
     DeleteBuffers = (DeleteBuffersFn) get("glDeleteBuffers");
 
     // VAOs
@@ -311,6 +318,7 @@ inline bool load() {
     BindTexture    = (BindTextureFn)    get("glBindTexture");
     DeleteTextures = (DeleteTexturesFn) get("glDeleteTextures");
     TexImage2D     = (TexImage2DFn)     get("glTexImage2D");
+    TexSubImage2D  = (TexSubImage2DFn)  get("glTexSubImage2D");
     TexParameteri  = (TexParameteriFn)  get("glTexParameteri");
     ActiveTexture  = (ActiveTextureFn)  get("glActiveTexture");
 
