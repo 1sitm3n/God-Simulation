@@ -1,5 +1,28 @@
 # God Simulation — System Architecture
 
+> **This is the target design, not a description of the current build.**
+>
+> The project is at Phase 0 (foundation). Everything below is written in the
+> present tense because it is the shape being built towards; most of it does not
+> exist yet. Status per section:
+
+| Section | Status |
+|---|---|
+| 1. Architectural Overview | **Partial** — the layered stack and event bus exist; 4 of the 5 layers are interface stubs |
+| 2. Simulation Kernel | **Built** — ECS, event bus, tick scheduler, seeded RNG, binary serialisation, all under test |
+| 3. Layer Architectures | **Partial** — Planetary is implemented (terrain, climate, biomes, heightmap export). Cosmological, Biological, Civilisation and Divine are ~45-line stubs that satisfy the `Layer` interface and do nothing |
+| 4. Time Control System | **Partial** — snapshot save/load works. Rewind, timeline branching and delta snapshots are planned |
+| 5. Data Flow Architecture | **Partial** — follows from the layer status above |
+| 6. Memory & Performance | **Planned** — Sim-LOD, the four-thread model and OpenMP are design intent. The current build is single-threaded and nothing has been profiled |
+| 7. Data Storage Schema | **Partial** — uncompressed binary snapshots work. LZ4 is linked but not used |
+| 8. Extension Points & Modding | **Planned** — none of it exists |
+| 9. Suggested Technology Stack | Informational |
+| 10. Critical Risk Areas | Informational |
+
+> Two corrections while I am here: entt uses a **sparse-set** storage model, not
+> the archetype model §2 calls it, and §9 addresses the reader in the second
+> person because it started life as notes to myself.
+
 ## 1. Architectural Overview
 
 The game is structured as a **layered simulation stack** with an **event-driven message bus** connecting layers. Each layer runs its own simulation logic at its own temporal resolution, communicating changes upward and downward through events rather than direct coupling.

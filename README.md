@@ -4,6 +4,10 @@ A god simulation where you shape a planet from barren rock to thriving civilisat
 
 **Phase 0: Foundation** — Core engine systems (ECS, Event Bus, Tick Scheduler, RNG, Serialisation).
 
+`docs/architecture.md` is the target design for the finished project, not a
+description of what is built today. It carries a per-section status table at the
+top.
+
 ## Build
 
 ### Requirements
