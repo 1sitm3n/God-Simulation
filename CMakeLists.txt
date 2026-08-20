@@ -12,8 +12,12 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     add_compile_options(-Wall -Wextra -Wpedantic)
     # Sanitisers in Debug mode
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
-        add_compile_options(-fsanitize=address,undefined -fno-omit-frame-pointer)
-        add_link_options(-fsanitize=address,undefined)
+        # -fno-sanitize-recover is what makes this mean anything. UBSan's
+        # default is print-and-continue, so the process still exits 0 and ctest
+        # reports PASS on a run that printed undefined behaviour. ASan aborts;
+        # UBSan did not. Without this line "sanitisers enabled" is decoration.
+        add_compile_options(-fsanitize=address,undefined -fno-sanitize-recover=all -fno-omit-frame-pointer)
+        add_link_options(-fsanitize=address,undefined -fno-sanitize-recover=all)
     endif()
 elseif(MSVC)
     add_compile_options(/W4)

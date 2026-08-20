@@ -104,6 +104,14 @@ public:
     const std::vector<TickLevel>& levels() const { return levels_; }
 
     /// Run N ticks at the active level.
+    /// Advance by num_ticks, regardless of pause state.
+    ///
+    /// Deliberate, and worth spelling out because the names don't: the
+    /// scheduler starts paused_ = true, step() is the continuous-play path and
+    /// is gated on pause, and run(n) is the explicit "advance n ticks now"
+    /// call that a caller uses to drive the simulation directly. Pausing then
+    /// calling run(10) does tick ten times, by design, and the pause state is
+    /// restored afterwards.
     SimTime run(size_t num_ticks) {
         bool was_paused = paused_;
         paused_ = false;

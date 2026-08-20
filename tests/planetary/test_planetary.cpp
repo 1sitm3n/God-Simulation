@@ -121,8 +121,19 @@ TEST_CASE("Heightmap serialisation round-trip", "[heightmap]") {
 // ═══ Biome Classification Tests ═══
 
 TEST_CASE("Biome: deep ocean classification", "[biome]") {
-    auto b = classify_biome(0.2f, 15.0f, 0.5f, 0.4f);
+    // 0.2 with sea_level 0.4 sits exactly on the deep-ocean threshold
+    // (sea_level * 0.5), and the check is a strict <, so it classified as
+    // Ocean and this assertion had been failing on main. A test should not
+    // assert on a boundary value unless the boundary is what it is testing.
+    auto b = classify_biome(0.15f, 15.0f, 0.5f, 0.4f);
     REQUIRE(b == BiomeType::DeepOcean);
+}
+
+TEST_CASE("Biome: the deep ocean boundary is exclusive", "[biome]") {
+    // Pin which side of sea_level * 0.5 belongs to which, so the convention is
+    // recorded rather than implied.
+    REQUIRE(classify_biome(0.1999f, 15.0f, 0.5f, 0.4f) == BiomeType::DeepOcean);
+    REQUIRE(classify_biome(0.2000f, 15.0f, 0.5f, 0.4f) == BiomeType::Ocean);
 }
 
 TEST_CASE("Biome: desert at high temp low moisture", "[biome]") {

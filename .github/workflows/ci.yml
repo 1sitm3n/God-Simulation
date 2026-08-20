@@ -1,0 +1,23 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, name: "linux / gcc release", type: Release }
+          # Debug carries ASan + UBSan with -fno-sanitize-recover, so a
+          # sanitiser finding fails the build instead of printing and exiting 0.
+          - { os: ubuntu-latest, name: "linux / gcc asan+ubsan", type: Debug }
+          - { os: macos-14,      name: "macos arm64 / clang",   type: Release }
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=${{ matrix.type }}
+      - run: cmake --build build --parallel
+      - run: ctest --test-dir build --output-on-failure
