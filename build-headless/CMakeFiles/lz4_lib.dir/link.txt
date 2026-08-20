@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblz4_lib.a "CMakeFiles/lz4_lib.dir/_deps/lz4-src/lib/lz4.c.o" "CMakeFiles/lz4_lib.dir/_deps/lz4-src/lib/lz4hc.c.o"
+/usr/bin/ranlib liblz4_lib.a

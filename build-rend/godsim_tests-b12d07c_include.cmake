@@ -1,0 +1,5 @@
+if(EXISTS "/Users/mehmetisitmen/dev/God-Simulation/build-rend/godsim_tests-b12d07c_tests.cmake")
+  include("/Users/mehmetisitmen/dev/God-Simulation/build-rend/godsim_tests-b12d07c_tests.cmake")
+else()
+  add_test(godsim_tests_NOT_BUILT-b12d07c godsim_tests_NOT_BUILT-b12d07c)
+endif()

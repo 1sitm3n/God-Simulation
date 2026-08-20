@@ -1,0 +1,1444 @@
+Start testing: Aug 20 17:15 BST
+----------------------------------------------------------
+1/64 Testing: EntityID encodes and decodes layer correctly
+1/64 Test: EntityID encodes and decodes layer correctly
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EntityID encodes and decodes layer correctly"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EntityID encodes and decodes layer correctly" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EntityID encodes and decodes layer correctly"
+Randomness seeded to: 3613302090
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EntityID encodes and decodes layer correctly" end time: Aug 20 17:15 BST
+"EntityID encodes and decodes layer correctly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/64 Testing: EntityID null is invalid
+2/64 Test: EntityID null is invalid
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EntityID null is invalid"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EntityID null is invalid" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EntityID null is invalid"
+Randomness seeded to: 2728573220
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EntityID null is invalid" end time: Aug 20 17:15 BST
+"EntityID null is invalid" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/64 Testing: EntityID equality
+3/64 Test: EntityID equality
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EntityID equality"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EntityID equality" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EntityID equality"
+Randomness seeded to: 1791324197
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EntityID equality" end time: Aug 20 17:15 BST
+"EntityID equality" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/64 Testing: EntityID preserves full ID range
+4/64 Test: EntityID preserves full ID range
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EntityID preserves full ID range"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EntityID preserves full ID range" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EntityID preserves full ID range"
+Randomness seeded to: 2650617301
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EntityID preserves full ID range" end time: Aug 20 17:15 BST
+"EntityID preserves full ID range" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/64 Testing: Registry creates entities in correct layers
+5/64 Test: Registry creates entities in correct layers
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry creates entities in correct layers"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry creates entities in correct layers" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry creates entities in correct layers"
+Randomness seeded to: 2378068741
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry creates entities in correct layers" end time: Aug 20 17:15 BST
+"Registry creates entities in correct layers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/64 Testing: Registry add and get components
+6/64 Test: Registry add and get components
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry add and get components"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry add and get components" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry add and get components"
+Randomness seeded to: 4188875110
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry add and get components" end time: Aug 20 17:15 BST
+"Registry add and get components" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/64 Testing: Registry destroy entity
+7/64 Test: Registry destroy entity
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry destroy entity"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry destroy entity" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry destroy entity"
+Randomness seeded to: 1820348271
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry destroy entity" end time: Aug 20 17:15 BST
+"Registry destroy entity" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/64 Testing: Registry iterate all entities with components
+8/64 Test: Registry iterate all entities with components
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry iterate all entities with components"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry iterate all entities with components" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry iterate all entities with components"
+Randomness seeded to: 841944394
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry iterate all entities with components" end time: Aug 20 17:15 BST
+"Registry iterate all entities with components" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/64 Testing: Registry iterate entities in specific layer
+9/64 Test: Registry iterate entities in specific layer
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry iterate entities in specific layer"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry iterate entities in specific layer" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry iterate entities in specific layer"
+Randomness seeded to: 535399024
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry iterate entities in specific layer" end time: Aug 20 17:15 BST
+"Registry iterate entities in specific layer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/64 Testing: Registry entity count per layer
+10/64 Test: Registry entity count per layer
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry entity count per layer"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry entity count per layer" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry entity count per layer"
+Randomness seeded to: 464997545
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry entity count per layer" end time: Aug 20 17:15 BST
+"Registry entity count per layer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/64 Testing: Registry remove component
+11/64 Test: Registry remove component
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Registry remove component"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Registry remove component" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Registry remove component"
+Randomness seeded to: 182447686
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Registry remove component" end time: Aug 20 17:15 BST
+"Registry remove component" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/64 Testing: EventBus emit and dispatch
+12/64 Test: EventBus emit and dispatch
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventBus emit and dispatch"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventBus emit and dispatch" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventBus emit and dispatch"
+Randomness seeded to: 353155981
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventBus emit and dispatch" end time: Aug 20 17:15 BST
+"EventBus emit and dispatch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/64 Testing: EventBus layer targeting
+13/64 Test: EventBus layer targeting
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventBus layer targeting"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventBus layer targeting" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventBus layer targeting"
+Randomness seeded to: 2632917546
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventBus layer targeting" end time: Aug 20 17:15 BST
+"EventBus layer targeting" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/64 Testing: EventBus broadcast reaches all layers
+14/64 Test: EventBus broadcast reaches all layers
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventBus broadcast reaches all layers"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventBus broadcast reaches all layers" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventBus broadcast reaches all layers"
+Randomness seeded to: 1336993370
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventBus broadcast reaches all layers" end time: Aug 20 17:15 BST
+"EventBus broadcast reaches all layers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/64 Testing: EventBus events are logged
+15/64 Test: EventBus events are logged
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventBus events are logged"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventBus events are logged" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventBus events are logged"
+Randomness seeded to: 847436373
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventBus events are logged" end time: Aug 20 17:15 BST
+"EventBus events are logged" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/64 Testing: EventBus events dispatched in timestamp order
+16/64 Test: EventBus events dispatched in timestamp order
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventBus events dispatched in timestamp order"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventBus events dispatched in timestamp order" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventBus events dispatched in timestamp order"
+Randomness seeded to: 2215757552
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventBus events dispatched in timestamp order" end time: Aug 20 17:15 BST
+"EventBus events dispatched in timestamp order" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/64 Testing: EventLog query by time range
+17/64 Test: EventLog query by time range
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventLog query by time range"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventLog query by time range" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventLog query by time range"
+Randomness seeded to: 2721266789
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventLog query by time range" end time: Aug 20 17:15 BST
+"EventLog query by time range" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/64 Testing: EventLog truncate_after
+18/64 Test: EventLog truncate_after
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventLog truncate_after"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventLog truncate_after" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventLog truncate_after"
+Randomness seeded to: 2129005634
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventLog truncate_after" end time: Aug 20 17:15 BST
+"EventLog truncate_after" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/64 Testing: EventBus multiple handlers for same type
+19/64 Test: EventBus multiple handlers for same type
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "EventBus multiple handlers for same type"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"EventBus multiple handlers for same type" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "EventBus multiple handlers for same type"
+Randomness seeded to: 1845324661
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"EventBus multiple handlers for same type" end time: Aug 20 17:15 BST
+"EventBus multiple handlers for same type" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/64 Testing: RNG determinism - same seed same sequence
+20/64 Test: RNG determinism - same seed same sequence
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG determinism - same seed same sequence"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG determinism - same seed same sequence" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG determinism - same seed same sequence"
+Randomness seeded to: 3630817827
+===============================================================================
+All tests passed (1000 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG determinism - same seed same sequence" end time: Aug 20 17:15 BST
+"RNG determinism - same seed same sequence" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/64 Testing: RNG different seeds produce different sequences
+21/64 Test: RNG different seeds produce different sequences
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG different seeds produce different sequences"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG different seeds produce different sequences" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG different seeds produce different sequences"
+Randomness seeded to: 3938762798
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG different seeds produce different sequences" end time: Aug 20 17:15 BST
+"RNG different seeds produce different sequences" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/64 Testing: RNG float range
+22/64 Test: RNG float range
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG float range"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG float range" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG float range"
+Randomness seeded to: 43150480
+===============================================================================
+All tests passed (20000 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG float range" end time: Aug 20 17:15 BST
+"RNG float range" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/64 Testing: RNG float range with min/max
+23/64 Test: RNG float range with min/max
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG float range with min/max"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG float range with min/max" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG float range with min/max"
+Randomness seeded to: 3160152949
+===============================================================================
+All tests passed (20000 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG float range with min/max" end time: Aug 20 17:15 BST
+"RNG float range with min/max" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/64 Testing: RNG int range
+24/64 Test: RNG int range
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG int range"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG int range" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG int range"
+Randomness seeded to: 3591567346
+===============================================================================
+All tests passed (20000 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG int range" end time: Aug 20 17:15 BST
+"RNG int range" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/64 Testing: RNG split produces independent streams
+25/64 Test: RNG split produces independent streams
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG split produces independent streams"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG split produces independent streams" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG split produces independent streams"
+Randomness seeded to: 1899658238
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG split produces independent streams" end time: Aug 20 17:15 BST
+"RNG split produces independent streams" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/64 Testing: RNG split is deterministic
+26/64 Test: RNG split is deterministic
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "RNG split is deterministic"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"RNG split is deterministic" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "RNG split is deterministic"
+Randomness seeded to: 3052409719
+===============================================================================
+All tests passed (100 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"RNG split is deterministic" end time: Aug 20 17:15 BST
+"RNG split is deterministic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/64 Testing: BinaryStream round-trip integers
+27/64 Test: BinaryStream round-trip integers
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "BinaryStream round-trip integers"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"BinaryStream round-trip integers" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "BinaryStream round-trip integers"
+Randomness seeded to: 2308343114
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryStream round-trip integers" end time: Aug 20 17:15 BST
+"BinaryStream round-trip integers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/64 Testing: BinaryStream round-trip floats
+28/64 Test: BinaryStream round-trip floats
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "BinaryStream round-trip floats"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"BinaryStream round-trip floats" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "BinaryStream round-trip floats"
+Randomness seeded to: 3300431944
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryStream round-trip floats" end time: Aug 20 17:15 BST
+"BinaryStream round-trip floats" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/64 Testing: BinaryStream round-trip strings
+29/64 Test: BinaryStream round-trip strings
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "BinaryStream round-trip strings"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"BinaryStream round-trip strings" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "BinaryStream round-trip strings"
+Randomness seeded to: 288777692
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryStream round-trip strings" end time: Aug 20 17:15 BST
+"BinaryStream round-trip strings" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/64 Testing: BinaryStream file round-trip
+30/64 Test: BinaryStream file round-trip
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "BinaryStream file round-trip"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"BinaryStream file round-trip" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "BinaryStream file round-trip"
+Randomness seeded to: 1919054957
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryStream file round-trip" end time: Aug 20 17:15 BST
+"BinaryStream file round-trip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/64 Testing: BinaryReader throws on read past end
+31/64 Test: BinaryReader throws on read past end
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "BinaryReader throws on read past end"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"BinaryReader throws on read past end" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "BinaryReader throws on read past end"
+Randomness seeded to: 4261586973
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryReader throws on read past end" end time: Aug 20 17:15 BST
+"BinaryReader throws on read past end" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/64 Testing: BinaryStream raw bytes round-trip
+32/64 Test: BinaryStream raw bytes round-trip
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "BinaryStream raw bytes round-trip"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"BinaryStream raw bytes round-trip" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "BinaryStream raw bytes round-trip"
+Randomness seeded to: 2909892635
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"BinaryStream raw bytes round-trip" end time: Aug 20 17:15 BST
+"BinaryStream raw bytes round-trip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/64 Testing: SimTime unit conversions
+33/64 Test: SimTime unit conversions
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "SimTime unit conversions"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"SimTime unit conversions" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "SimTime unit conversions"
+Randomness seeded to: 2848722585
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SimTime unit conversions" end time: Aug 20 17:15 BST
+"SimTime unit conversions" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/64 Testing: SimTime arithmetic
+34/64 Test: SimTime arithmetic
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "SimTime arithmetic"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"SimTime arithmetic" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "SimTime arithmetic"
+Randomness seeded to: 801955505
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SimTime arithmetic" end time: Aug 20 17:15 BST
+"SimTime arithmetic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/64 Testing: SimTime comparison
+35/64 Test: SimTime comparison
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "SimTime comparison"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"SimTime comparison" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "SimTime comparison"
+Randomness seeded to: 326205506
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SimTime comparison" end time: Aug 20 17:15 BST
+"SimTime comparison" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/64 Testing: TickScheduler ticks layers at correct level
+36/64 Test: TickScheduler ticks layers at correct level
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "TickScheduler ticks layers at correct level"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"TickScheduler ticks layers at correct level" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "TickScheduler ticks layers at correct level"
+Randomness seeded to: 3141226430
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TickScheduler ticks layers at correct level" end time: Aug 20 17:15 BST
+"TickScheduler ticks layers at correct level" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/64 Testing: TickScheduler advances time correctly
+37/64 Test: TickScheduler advances time correctly
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "TickScheduler advances time correctly"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"TickScheduler advances time correctly" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "TickScheduler advances time correctly"
+Randomness seeded to: 869846709
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TickScheduler advances time correctly" end time: Aug 20 17:15 BST
+"TickScheduler advances time correctly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/64 Testing: TickScheduler pause prevents ticking
+38/64 Test: TickScheduler pause prevents ticking
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "TickScheduler pause prevents ticking"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"TickScheduler pause prevents ticking" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "TickScheduler pause prevents ticking"
+Randomness seeded to: 3739395456
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TickScheduler pause prevents ticking" end time: Aug 20 17:15 BST
+"TickScheduler pause prevents ticking" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/64 Testing: TickScheduler dispatches events after tick
+39/64 Test: TickScheduler dispatches events after tick
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "TickScheduler dispatches events after tick"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"TickScheduler dispatches events after tick" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "TickScheduler dispatches events after tick"
+Randomness seeded to: 1672602618
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"TickScheduler dispatches events after tick" end time: Aug 20 17:15 BST
+"TickScheduler dispatches events after tick" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/64 Testing: Full simulation lifecycle
+40/64 Test: Full simulation lifecycle
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Full simulation lifecycle"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Full simulation lifecycle" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Full simulation lifecycle"
+Randomness seeded to: 742100907
+[17:15:30.208] [info] ═══ God Simulation Initialising ═══
+[17:15:30.208] [info] Seed: 42
+[17:15:30.208] [info] CosmologicalLayer initialised
+[17:15:30.208] [info]   Registered layer: Cosmological (ID 0)
+[17:15:30.208] [info] PlanetaryLayer initialised
+[17:15:30.208] [info]   Registered layer: Planetary (ID 1)
+[17:15:30.208] [info] BiologicalLayer initialised
+[17:15:30.208] [info]   Registered layer: Biological (ID 2)
+[17:15:30.208] [info] CivilisationLayer initialised
+[17:15:30.208] [info]   Registered layer: Civilisation (ID 3)
+[17:15:30.208] [info] DivineLayer initialised
+[17:15:30.208] [info]   Registered layer: Divine (ID 4)
+[17:15:30.208] [info] Tick levels configured:
+[17:15:30.208] [info]   [0] detail = 1 days (layer mask: 0x1F)
+[17:15:30.208] [info]   [1] history = 365 days (layer mask: 0x1F)
+[17:15:30.208] [info]   [2] evolution = 36525 days (layer mask: 0x07)
+[17:15:30.208] [info]   [3] geological = 3652500 days (layer mask: 0x03)
+[17:15:30.208] [info]   [4] cosmic = 365250000 days (layer mask: 0x01)
+[17:15:30.208] [info] ═══ Initialisation Complete ═══
+[17:15:30.208] [info] ═══ Shutting Down ═══
+[17:15:30.208] [info] CosmologicalLayer shutdown (ticked 100 times)
+[17:15:30.208] [info] PlanetaryLayer shutdown (ticked 100 times)
+[17:15:30.208] [info] BiologicalLayer shutdown (ticked 100 times)
+[17:15:30.208] [info] CivilisationLayer shutdown (ticked 100 times)
+[17:15:30.208] [info] DivineLayer shutdown (ticked 100 times)
+[17:15:30.208] [info] Final time: 99.931554 years
+[17:15:30.208] [info] Total events logged: 600
+[17:15:30.208] [info] ═══ Shutdown Complete ═══
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Full simulation lifecycle" end time: Aug 20 17:15 BST
+"Full simulation lifecycle" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/64 Testing: Snapshot save and load
+41/64 Test: Snapshot save and load
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Snapshot save and load"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Snapshot save and load" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Snapshot save and load"
+Randomness seeded to: 1211663761
+[2026-08-20 17:15:30.211] [info] ═══ God Simulation Initialising ═══
+[2026-08-20 17:15:30.211] [info] Seed: 42
+[2026-08-20 17:15:30.211] [info] CosmologicalLayer initialised
+[2026-08-20 17:15:30.211] [info]   Registered layer: Cosmological (ID 0)
+[2026-08-20 17:15:30.211] [info] PlanetaryLayer initialised
+[2026-08-20 17:15:30.211] [info]   Registered layer: Planetary (ID 1)
+[2026-08-20 17:15:30.211] [info] BiologicalLayer initialised
+[2026-08-20 17:15:30.211] [info]   Registered layer: Biological (ID 2)
+[2026-08-20 17:15:30.211] [info] CivilisationLayer initialised
+[2026-08-20 17:15:30.211] [info]   Registered layer: Civilisation (ID 3)
+[2026-08-20 17:15:30.211] [info] DivineLayer initialised
+[2026-08-20 17:15:30.211] [info]   Registered layer: Divine (ID 4)
+[2026-08-20 17:15:30.211] [info] Tick levels configured:
+[2026-08-20 17:15:30.211] [info]   [0] detail = 1 days (layer mask: 0x1F)
+[2026-08-20 17:15:30.211] [info]   [1] history = 365 days (layer mask: 0x1F)
+[2026-08-20 17:15:30.211] [info]   [2] evolution = 36525 days (layer mask: 0x07)
+[2026-08-20 17:15:30.211] [info]   [3] geological = 3652500 days (layer mask: 0x03)
+[2026-08-20 17:15:30.211] [info]   [4] cosmic = 365250000 days (layer mask: 0x01)
+[2026-08-20 17:15:30.211] [info] ═══ Initialisation Complete ═══
+[2026-08-20 17:15:30.211] [info] Saving snapshot to: /var/folders/xk/7nsh15t95h9b8x1xbmg1m9fc0000gn/T/godsim_integration_test.snap
+[2026-08-20 17:15:30.211] [info] Snapshot saved (88 bytes)
+[2026-08-20 17:15:30.211] [info] Loading snapshot from: /var/folders/xk/7nsh15t95h9b8x1xbmg1m9fc0000gn/T/godsim_integration_test.snap
+[2026-08-20 17:15:30.211] [info] Snapshot loaded. Time: 1.000000 KY
+[2026-08-20 17:15:30.211] [info] ═══ Shutting Down ═══
+[2026-08-20 17:15:30.211] [info] CosmologicalLayer shutdown (ticked 10 times)
+[2026-08-20 17:15:30.211] [info] PlanetaryLayer shutdown (ticked 10 times)
+[2026-08-20 17:15:30.211] [info] BiologicalLayer shutdown (ticked 10 times)
+[2026-08-20 17:15:30.211] [info] CivilisationLayer shutdown (ticked 0 times)
+[2026-08-20 17:15:30.211] [info] DivineLayer shutdown (ticked 0 times)
+[2026-08-20 17:15:30.211] [info] Final time: 1.000000 KY
+[2026-08-20 17:15:30.211] [info] Total events logged: 80
+[2026-08-20 17:15:30.211] [info] ═══ Shutdown Complete ═══
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Snapshot save and load" end time: Aug 20 17:15 BST
+"Snapshot save and load" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/64 Testing: Cross-layer events are delivered
+42/64 Test: Cross-layer events are delivered
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Cross-layer events are delivered"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Cross-layer events are delivered" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Cross-layer events are delivered"
+Randomness seeded to: 1102427683
+[2026-08-20 17:15:30.214] [info] ═══ God Simulation Initialising ═══
+[2026-08-20 17:15:30.214] [info] Seed: 42
+[2026-08-20 17:15:30.214] [info] CosmologicalLayer initialised
+[2026-08-20 17:15:30.214] [info]   Registered layer: Cosmological (ID 0)
+[2026-08-20 17:15:30.214] [info] PlanetaryLayer initialised
+[2026-08-20 17:15:30.214] [info]   Registered layer: Planetary (ID 1)
+[2026-08-20 17:15:30.214] [info] BiologicalLayer initialised
+[2026-08-20 17:15:30.214] [info]   Registered layer: Biological (ID 2)
+[2026-08-20 17:15:30.214] [info] CivilisationLayer initialised
+[2026-08-20 17:15:30.214] [info]   Registered layer: Civilisation (ID 3)
+[2026-08-20 17:15:30.214] [info] DivineLayer initialised
+[2026-08-20 17:15:30.214] [info]   Registered layer: Divine (ID 4)
+[2026-08-20 17:15:30.214] [info] Tick levels configured:
+[2026-08-20 17:15:30.214] [info]   [0] detail = 1 days (layer mask: 0x1F)
+[2026-08-20 17:15:30.214] [info]   [1] history = 365 days (layer mask: 0x1F)
+[2026-08-20 17:15:30.214] [info]   [2] evolution = 36525 days (layer mask: 0x07)
+[2026-08-20 17:15:30.214] [info]   [3] geological = 3652500 days (layer mask: 0x03)
+[2026-08-20 17:15:30.214] [info]   [4] cosmic = 365250000 days (layer mask: 0x01)
+[2026-08-20 17:15:30.214] [info] ═══ Initialisation Complete ═══
+[2026-08-20 17:15:30.214] [info] ═══ Shutting Down ═══
+[2026-08-20 17:15:30.214] [info] CosmologicalLayer shutdown (ticked 5 times)
+[2026-08-20 17:15:30.214] [info] PlanetaryLayer shutdown (ticked 5 times)
+[2026-08-20 17:15:30.214] [info] BiologicalLayer shutdown (ticked 5 times)
+[2026-08-20 17:15:30.214] [info] CivilisationLayer shutdown (ticked 5 times)
+[2026-08-20 17:15:30.214] [info] DivineLayer shutdown (ticked 5 times)
+[2026-08-20 17:15:30.214] [info] Final time: 4.996578 years
+[2026-08-20 17:15:30.214] [info] Total events logged: 30
+[2026-08-20 17:15:30.214] [info] ═══ Shutdown Complete ═══
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Cross-layer events are delivered" end time: Aug 20 17:15 BST
+"Cross-layer events are delivered" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/64 Testing: Different tick levels activate correct layers
+43/64 Test: Different tick levels activate correct layers
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Different tick levels activate correct layers"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Different tick levels activate correct layers" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Different tick levels activate correct layers"
+Randomness seeded to: 3171255244
+[2026-08-20 17:15:30.217] [info] ═══ God Simulation Initialising ═══
+[2026-08-20 17:15:30.217] [info] Seed: 42
+[2026-08-20 17:15:30.217] [info] CosmologicalLayer initialised
+[2026-08-20 17:15:30.217] [info]   Registered layer: Cosmological (ID 0)
+[2026-08-20 17:15:30.217] [info] PlanetaryLayer initialised
+[2026-08-20 17:15:30.217] [info]   Registered layer: Planetary (ID 1)
+[2026-08-20 17:15:30.217] [info] BiologicalLayer initialised
+[2026-08-20 17:15:30.217] [info]   Registered layer: Biological (ID 2)
+[2026-08-20 17:15:30.217] [info] CivilisationLayer initialised
+[2026-08-20 17:15:30.217] [info]   Registered layer: Civilisation (ID 3)
+[2026-08-20 17:15:30.217] [info] DivineLayer initialised
+[2026-08-20 17:15:30.217] [info]   Registered layer: Divine (ID 4)
+[2026-08-20 17:15:30.217] [info] Tick levels configured:
+[2026-08-20 17:15:30.217] [info]   [0] detail = 1 days (layer mask: 0x1F)
+[2026-08-20 17:15:30.217] [info]   [1] history = 365 days (layer mask: 0x1F)
+[2026-08-20 17:15:30.217] [info]   [2] evolution = 36525 days (layer mask: 0x07)
+[2026-08-20 17:15:30.217] [info]   [3] geological = 3652500 days (layer mask: 0x03)
+[2026-08-20 17:15:30.217] [info]   [4] cosmic = 365250000 days (layer mask: 0x01)
+[2026-08-20 17:15:30.217] [info] ═══ Initialisation Complete ═══
+[2026-08-20 17:15:30.217] [info] ═══ Shutting Down ═══
+[2026-08-20 17:15:30.217] [info] CosmologicalLayer shutdown (ticked 3 times)
+[2026-08-20 17:15:30.217] [info] PlanetaryLayer shutdown (ticked 0 times)
+[2026-08-20 17:15:30.217] [info] BiologicalLayer shutdown (ticked 0 times)
+[2026-08-20 17:15:30.217] [info] CivilisationLayer shutdown (ticked 0 times)
+[2026-08-20 17:15:30.217] [info] DivineLayer shutdown (ticked 0 times)
+[2026-08-20 17:15:30.217] [info] Final time: 3.000000 MY
+[2026-08-20 17:15:30.217] [info] Total events logged: 6
+[2026-08-20 17:15:30.217] [info] ═══ Shutdown Complete ═══
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Different tick levels activate correct layers" end time: Aug 20 17:15 BST
+"Different tick levels activate correct layers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/64 Testing: Perlin noise is deterministic
+44/64 Test: Perlin noise is deterministic
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Perlin noise is deterministic"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Perlin noise is deterministic" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Perlin noise is deterministic"
+Randomness seeded to: 1056949283
+===============================================================================
+All tests passed (100 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Perlin noise is deterministic" end time: Aug 20 17:15 BST
+"Perlin noise is deterministic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/64 Testing: Perlin noise output range is bounded
+45/64 Test: Perlin noise output range is bounded
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Perlin noise output range is bounded"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Perlin noise output range is bounded" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Perlin noise output range is bounded"
+Randomness seeded to: 4258765643
+===============================================================================
+All tests passed (20000 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Perlin noise output range is bounded" end time: Aug 20 17:15 BST
+"Perlin noise output range is bounded" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/64 Testing: Perlin fbm returns normalised range
+46/64 Test: Perlin fbm returns normalised range
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Perlin fbm returns normalised range"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Perlin fbm returns normalised range" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Perlin fbm returns normalised range"
+Randomness seeded to: 421920236
+===============================================================================
+All tests passed (2000 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Perlin fbm returns normalised range" end time: Aug 20 17:15 BST
+"Perlin fbm returns normalised range" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/64 Testing: Different seeds produce different noise
+47/64 Test: Different seeds produce different noise
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Different seeds produce different noise"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Different seeds produce different noise" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Different seeds produce different noise"
+Randomness seeded to: 4086868026
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Different seeds produce different noise" end time: Aug 20 17:15 BST
+"Different seeds produce different noise" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/64 Testing: Heightmap basic operations
+48/64 Test: Heightmap basic operations
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Heightmap basic operations"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Heightmap basic operations" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Heightmap basic operations"
+Randomness seeded to: 3224147111
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Heightmap basic operations" end time: Aug 20 17:15 BST
+"Heightmap basic operations" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/64 Testing: Heightmap normalise
+49/64 Test: Heightmap normalise
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Heightmap normalise"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Heightmap normalise" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Heightmap normalise"
+Randomness seeded to: 4009777507
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Heightmap normalise" end time: Aug 20 17:15 BST
+"Heightmap normalise" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/64 Testing: Heightmap bilinear sampling
+50/64 Test: Heightmap bilinear sampling
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Heightmap bilinear sampling"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Heightmap bilinear sampling" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Heightmap bilinear sampling"
+Randomness seeded to: 2981584450
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Heightmap bilinear sampling" end time: Aug 20 17:15 BST
+"Heightmap bilinear sampling" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/64 Testing: Heightmap serialisation round-trip
+51/64 Test: Heightmap serialisation round-trip
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Heightmap serialisation round-trip"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Heightmap serialisation round-trip" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Heightmap serialisation round-trip"
+Randomness seeded to: 3424422977
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Heightmap serialisation round-trip" end time: Aug 20 17:15 BST
+"Heightmap serialisation round-trip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/64 Testing: Biome: deep ocean classification
+52/64 Test: Biome: deep ocean classification
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: deep ocean classification"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: deep ocean classification" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: deep ocean classification"
+Randomness seeded to: 351557958
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: deep ocean classification" end time: Aug 20 17:15 BST
+"Biome: deep ocean classification" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/64 Testing: Biome: the deep ocean boundary is exclusive
+53/64 Test: Biome: the deep ocean boundary is exclusive
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: the deep ocean boundary is exclusive"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: the deep ocean boundary is exclusive" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: the deep ocean boundary is exclusive"
+Randomness seeded to: 554436414
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: the deep ocean boundary is exclusive" end time: Aug 20 17:15 BST
+"Biome: the deep ocean boundary is exclusive" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/64 Testing: Biome: desert at high temp low moisture
+54/64 Test: Biome: desert at high temp low moisture
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: desert at high temp low moisture"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: desert at high temp low moisture" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: desert at high temp low moisture"
+Randomness seeded to: 1343348936
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: desert at high temp low moisture" end time: Aug 20 17:15 BST
+"Biome: desert at high temp low moisture" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/64 Testing: Biome: tropical rainforest at high temp high moisture
+55/64 Test: Biome: tropical rainforest at high temp high moisture
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: tropical rainforest at high temp high moisture"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: tropical rainforest at high temp high moisture" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: tropical rainforest at high temp high moisture"
+Randomness seeded to: 3223313201
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: tropical rainforest at high temp high moisture" end time: Aug 20 17:15 BST
+"Biome: tropical rainforest at high temp high moisture" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/64 Testing: Biome: tundra at cold temperatures
+56/64 Test: Biome: tundra at cold temperatures
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: tundra at cold temperatures"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: tundra at cold temperatures" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: tundra at cold temperatures"
+Randomness seeded to: 3477605545
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: tundra at cold temperatures" end time: Aug 20 17:15 BST
+"Biome: tundra at cold temperatures" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/64 Testing: Biome: mountain at high elevation
+57/64 Test: Biome: mountain at high elevation
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: mountain at high elevation"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: mountain at high elevation" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: mountain at high elevation"
+Randomness seeded to: 1241237036
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: mountain at high elevation" end time: Aug 20 17:15 BST
+"Biome: mountain at high elevation" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/64 Testing: Biome: beach near sea level
+58/64 Test: Biome: beach near sea level
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Biome: beach near sea level"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Biome: beach near sea level" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Biome: beach near sea level"
+Randomness seeded to: 1222347275
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Biome: beach near sea level" end time: Aug 20 17:15 BST
+"Biome: beach near sea level" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/64 Testing: Terrain generator produces valid heightmap
+59/64 Test: Terrain generator produces valid heightmap
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Terrain generator produces valid heightmap"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Terrain generator produces valid heightmap" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Terrain generator produces valid heightmap"
+Randomness seeded to: 835411770
+[2026-08-20 17:15:30.258] [info] Generating terrain (64x64)...
+[2026-08-20 17:15:30.258] [info]   Stage 1: Tectonic plates (8 plates)...
+[2026-08-20 17:15:30.258] [info]   Stage 2: Continental noise (7 octaves)...
+[2026-08-20 17:15:30.259] [info]   Stage 3: Mountain ridges...
+[2026-08-20 17:15:30.259] [info]   Stage 4: Hydraulic erosion (100 iterations)...
+[2026-08-20 17:15:30.259] [info]   Stage 5: Normalisation and sea level adjustment...
+[2026-08-20 17:15:30.259] [info]   Terrain complete. Elevation range: [0.000, 1.000]
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Terrain generator produces valid heightmap" end time: Aug 20 17:15 BST
+"Terrain generator produces valid heightmap" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/64 Testing: Terrain generator is deterministic
+60/64 Test: Terrain generator is deterministic
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Terrain generator is deterministic"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Terrain generator is deterministic" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Terrain generator is deterministic"
+Randomness seeded to: 2286319975
+[2026-08-20 17:15:30.262] [info] Generating terrain (32x32)...
+[2026-08-20 17:15:30.262] [info]   Stage 1: Tectonic plates (8 plates)...
+[2026-08-20 17:15:30.262] [info]   Stage 2: Continental noise (7 octaves)...
+[2026-08-20 17:15:30.262] [info]   Stage 3: Mountain ridges...
+[2026-08-20 17:15:30.262] [info]   Stage 4: Hydraulic erosion (50 iterations)...
+[2026-08-20 17:15:30.262] [info]   Stage 5: Normalisation and sea level adjustment...
+[2026-08-20 17:15:30.263] [info]   Terrain complete. Elevation range: [0.000, 1.000]
+[2026-08-20 17:15:30.263] [info] Generating terrain (32x32)...
+[2026-08-20 17:15:30.263] [info]   Stage 1: Tectonic plates (8 plates)...
+[2026-08-20 17:15:30.263] [info]   Stage 2: Continental noise (7 octaves)...
+[2026-08-20 17:15:30.263] [info]   Stage 3: Mountain ridges...
+[2026-08-20 17:15:30.263] [info]   Stage 4: Hydraulic erosion (50 iterations)...
+[2026-08-20 17:15:30.263] [info]   Stage 5: Normalisation and sea level adjustment...
+[2026-08-20 17:15:30.263] [info]   Terrain complete. Elevation range: [0.000, 1.000]
+===============================================================================
+All tests passed (1024 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Terrain generator is deterministic" end time: Aug 20 17:15 BST
+"Terrain generator is deterministic" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/64 Testing: Terrain has both land and ocean
+61/64 Test: Terrain has both land and ocean
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Terrain has both land and ocean"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Terrain has both land and ocean" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Terrain has both land and ocean"
+Randomness seeded to: 716035248
+[2026-08-20 17:15:30.266] [info] Generating terrain (64x64)...
+[2026-08-20 17:15:30.266] [info]   Stage 1: Tectonic plates (8 plates)...
+[2026-08-20 17:15:30.266] [info]   Stage 2: Continental noise (7 octaves)...
+[2026-08-20 17:15:30.267] [info]   Stage 3: Mountain ridges...
+[2026-08-20 17:15:30.267] [info]   Stage 4: Hydraulic erosion (100 iterations)...
+[2026-08-20 17:15:30.267] [info]   Stage 5: Normalisation and sea level adjustment...
+[2026-08-20 17:15:30.267] [info]   Terrain complete. Elevation range: [0.000, 1.000]
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Terrain has both land and ocean" end time: Aug 20 17:15 BST
+"Terrain has both land and ocean" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/64 Testing: Temperature is cold at poles, warm at equator
+62/64 Test: Temperature is cold at poles, warm at equator
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Temperature is cold at poles\, warm at equator"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Temperature is cold at poles, warm at equator" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Temperature is cold at poles\, warm at equator"
+Randomness seeded to: 2640551886
+[2026-08-20 17:15:30.270] [info]   Generating temperature map...
+[2026-08-20 17:15:30.270] [info]     Temperature range: -28.2°C to 10.2°C
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Temperature is cold at poles, warm at equator" end time: Aug 20 17:15 BST
+"Temperature is cold at poles, warm at equator" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/64 Testing: Moisture decreases inland
+63/64 Test: Moisture decreases inland
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "Moisture decreases inland"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"Moisture decreases inland" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "Moisture decreases inland"
+Randomness seeded to: 1171746280
+[2026-08-20 17:15:30.273] [info]   Generating temperature map...
+[2026-08-20 17:15:30.273] [info]     Temperature range: -34.8°C to 16.8°C
+[2026-08-20 17:15:30.273] [info]   Generating moisture map...
+[2026-08-20 17:15:30.273] [info]     Moisture range: 0.000 to 0.900
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Moisture decreases inland" end time: Aug 20 17:15 BST
+"Moisture decreases inland" time elapsed: 00:00:00
+----------------------------------------------------------
+
+64/64 Testing: PlanetData serialisation round-trip
+64/64 Test: PlanetData serialisation round-trip
+Command: "/Users/mehmetisitmen/dev/God-Simulation/build-headless/godsim_tests" "PlanetData serialisation round-trip"
+Directory: /Users/mehmetisitmen/dev/God-Simulation/build-headless
+"PlanetData serialisation round-trip" start time: Aug 20 17:15 BST
+Output:
+----------------------------------------------------------
+Filters: "PlanetData serialisation round-trip"
+Randomness seeded to: 803780640
+[2026-08-20 17:15:30.276] [info] Generating terrain (32x32)...
+[2026-08-20 17:15:30.276] [info]   Stage 1: Tectonic plates (8 plates)...
+[2026-08-20 17:15:30.276] [info]   Stage 2: Continental noise (7 octaves)...
+[2026-08-20 17:15:30.276] [info]   Stage 3: Mountain ridges...
+[2026-08-20 17:15:30.276] [info]   Stage 4: Hydraulic erosion (50 iterations)...
+[2026-08-20 17:15:30.276] [info]   Stage 5: Normalisation and sea level adjustment...
+[2026-08-20 17:15:30.276] [info]   Terrain complete. Elevation range: [0.000, 1.000]
+[2026-08-20 17:15:30.276] [info]   Generating temperature map...
+[2026-08-20 17:15:30.276] [info]     Temperature range: -45.7°C to 17.2°C
+[2026-08-20 17:15:30.276] [info]   Generating moisture map...
+[2026-08-20 17:15:30.276] [info]     Moisture range: 0.246 to 0.900
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PlanetData serialisation round-trip" end time: Aug 20 17:15 BST
+"PlanetData serialisation round-trip" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 20 17:15 BST

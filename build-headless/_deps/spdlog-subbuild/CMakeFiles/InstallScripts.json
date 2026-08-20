@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/mehmetisitmen/dev/God-Simulation/build-headless/_deps/spdlog-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

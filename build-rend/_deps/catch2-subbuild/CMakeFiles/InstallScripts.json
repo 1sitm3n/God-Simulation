@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/mehmetisitmen/dev/God-Simulation/build-rend/_deps/catch2-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

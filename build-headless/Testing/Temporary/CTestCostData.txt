@@ -1,0 +1,65 @@
+EntityID encodes and decodes layer correctly 1 0.0030935
+EntityID null is invalid 1 0.00261017
+EntityID equality 1 0.00263854
+EntityID preserves full ID range 1 0.00265871
+Registry creates entities in correct layers 1 0.00251963
+Registry add and get components 1 0.00242542
+Registry destroy entity 1 0.00253667
+Registry iterate all entities with components 1 0.00247929
+Registry iterate entities in specific layer 1 0.00247887
+Registry entity count per layer 1 0.00247496
+Registry remove component 1 0.00250775
+EventBus emit and dispatch 1 0.00249675
+EventBus layer targeting 1 0.00263471
+EventBus broadcast reaches all layers 1 0.00247108
+EventBus events are logged 1 0.00244154
+EventBus events dispatched in timestamp order 1 0.00242071
+EventLog query by time range 1 0.00242033
+EventLog truncate_after 1 0.00257392
+EventBus multiple handlers for same type 1 0.00247067
+RNG determinism - same seed same sequence 1 0.0024545
+RNG different seeds produce different sequences 1 0.00243337
+RNG float range 1 0.00252621
+RNG float range with min/max 1 0.00252283
+RNG int range 1 0.00259608
+RNG split produces independent streams 1 0.00246463
+RNG split is deterministic 1 0.00241317
+BinaryStream round-trip integers 1 0.00254379
+BinaryStream round-trip floats 1 0.00246458
+BinaryStream round-trip strings 1 0.00242575
+BinaryStream file round-trip 1 0.00267833
+BinaryReader throws on read past end 1 0.00249171
+BinaryStream raw bytes round-trip 1 0.00242975
+SimTime unit conversions 1 0.00243221
+SimTime arithmetic 1 0.00241042
+SimTime comparison 1 0.00244992
+TickScheduler ticks layers at correct level 1 0.00244862
+TickScheduler advances time correctly 1 0.00243608
+TickScheduler pause prevents ticking 1 0.00244587
+TickScheduler dispatches events after tick 1 0.00244287
+Full simulation lifecycle 1 0.00287433
+Snapshot save and load 1 0.00277438
+Cross-layer events are delivered 1 0.00265246
+Different tick levels activate correct layers 1 0.00264583
+Perlin noise is deterministic 1 0.00246083
+Perlin noise output range is bounded 1 0.00261508
+Perlin fbm returns normalised range 1 0.00255612
+Different seeds produce different noise 1 0.00245125
+Heightmap basic operations 1 0.00243092
+Heightmap normalise 1 0.002425
+Heightmap bilinear sampling 1 0.00240725
+Heightmap serialisation round-trip 1 0.00247621
+Biome: deep ocean classification 1 0.00245313
+Biome: the deep ocean boundary is exclusive 1 0.00243142
+Biome: desert at high temp low moisture 1 0.00244204
+Biome: tropical rainforest at high temp high moisture 1 0.00242708
+Biome: tundra at cold temperatures 1 0.00240992
+Biome: mountain at high elevation 1 0.00242871
+Biome: beach near sea level 1 0.00241433
+Terrain generator produces valid heightmap 1 0.0041955
+Terrain generator is deterministic 1 0.00343562
+Terrain has both land and ocean 1 0.00415742
+Temperature is cold at poles, warm at equator 1 0.00277604
+Moisture decreases inland 1 0.00286654
+PlanetData serialisation round-trip 1 0.00315258
+---

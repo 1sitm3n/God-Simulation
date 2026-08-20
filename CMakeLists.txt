@@ -66,6 +66,15 @@ FetchContent_Declare(
     GIT_SHALLOW    TRUE
 )
 
+# The renderer is optional.
+#
+# godsim_lib is core + layers and links neither GLFW nor OpenGL, which is what
+# lets the whole test suite run headless. Until now CMake still configured GLFW
+# regardless, so a machine without X11 development headers could not configure
+# the project at all - including CI, where nothing needs a window. OFF skips
+# GLFW, OpenGL and the godsim executable, and builds only the library and tests.
+option(GODSIM_BUILD_RENDERER "Build the OpenGL renderer and the godsim executable" ON)
+
 # GLFW - Windowing (renderer)
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -89,7 +98,11 @@ FetchContent_Declare(
     GIT_SHALLOW    TRUE
 )
 
-FetchContent_MakeAvailable(entt spdlog Catch2 pcg_cpp glfw)
+if(GODSIM_BUILD_RENDERER)
+    FetchContent_MakeAvailable(entt spdlog Catch2 pcg_cpp glfw)
+else()
+    FetchContent_MakeAvailable(entt spdlog Catch2 pcg_cpp)
+endif()
 
 # glm - just use as include directory (avoids CMake target compatibility issues)
 FetchContent_GetProperties(glm)
@@ -112,7 +125,9 @@ add_library(pcg INTERFACE)
 target_include_directories(pcg INTERFACE ${pcg_cpp_SOURCE_DIR}/include)
 
 # OpenGL
-find_package(OpenGL REQUIRED)
+if(GODSIM_BUILD_RENDERER)
+    find_package(OpenGL REQUIRED)
+endif()
 
 # ─── God Simulation Library (core + layers, no renderer) ───
 file(GLOB_RECURSE GODSIM_SOURCES
@@ -135,15 +150,18 @@ target_link_libraries(godsim_lib PUBLIC
     lz4_lib
 )
 
-# ─── Main Executable (with renderer) ───
-add_executable(godsim src/main.cpp)
-target_include_directories(godsim PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-target_link_libraries(godsim PRIVATE
-    godsim_lib
-    glfw
-    glm_headers
-    OpenGL::GL
-)
+if(GODSIM_BUILD_RENDERER)
+    # ─── Main Executable (with renderer) ───
+    add_executable(godsim src/main.cpp)
+    target_include_directories(godsim PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
+    target_link_libraries(godsim PRIVATE
+        godsim_lib
+        glfw
+        glm_headers
+        OpenGL::GL
+    )
+endif()
+
 
 # ─── Tests (no renderer dependency) ───
 enable_testing()

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgodsim_lib.a CMakeFiles/godsim_lib.dir/src/core/util/Version.cpp.o
+/usr/bin/ranlib libgodsim_lib.a
